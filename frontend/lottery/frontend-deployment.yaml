@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lottery-fe
+  namespace: 
+  labels:
+    app: lottery-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lottery-fe
+  template:
+    metadata:
+      labels:
+        app: lottery-fe
+    spec:
+      containers:
+      - name: lottery-fe
+        image: lottery-fe:0.0.1
+        ports:
+        - containerPort: 80
