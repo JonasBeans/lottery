@@ -1,0 +1,13 @@
+#cards {
+    padding: 0 25%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}

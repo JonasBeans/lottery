@@ -1,1 +1,12 @@
-<p>choice works!</p>
+
+<div id="cards">
+    <choice-card class="card" [isEnabled]="isEnabled" (isGamePlayed)="update($event)" />
+    <choice-card class="card" [isEnabled]="isEnabled" (isGamePlayed)="update($event)" />
+    <choice-card class="card" [isEnabled]="isEnabled" (isGamePlayed)="update($event)" />
+    <choice-card class="card" [isEnabled]="isEnabled" (isGamePlayed)="update($event)" />
+    <choice-card class="card" [isEnabled]="isEnabled" (isGamePlayed)="update($event)" />
+</div>
+<div id="buttons">
+    <button mat-stroked-button [disabled]="isStarted" id="start-button" (click)="start()">Start</button>
+    <button mat-stroked-button [disabled]="!isStarted" id="reset-button" (click)="reset()">One more time</button>
+</div>

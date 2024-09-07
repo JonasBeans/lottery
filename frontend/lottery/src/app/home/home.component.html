@@ -1,1 +1,11 @@
-<p>home works!</p>
+<form>
+    <mat-form-field>
+        <mat-label>Input funds to add</mat-label>
+        <input matInput id="new-balance" placeholder="50.00" #newBalanceInputFromUser>
+    </mat-form-field>
+
+    <button mat-raised-button
+        (click)="fundsService.addFunds(newBalanceInputFromUser.value); newBalanceInputFromUser.value = ''">
+        SUBMIT FUNDS
+    </button>
+</form>
