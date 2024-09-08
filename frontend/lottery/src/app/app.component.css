@@ -1,0 +1,10 @@
+body {
+    padding: 3%;
+    background-color: rgba(158, 160, 247, 0.546);
+}
+nav {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+    margin-bottom: 5px
+}

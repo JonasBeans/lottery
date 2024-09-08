@@ -3,6 +3,7 @@ import { CardComponent } from "./card/card.component";
 import { MatButtonModule } from '@angular/material/button';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { FundsService } from '../../services/funds/funds.service';
+import { UtilsService } from '../../services/utils/utils.service';
 
 @Component({
   selector: 'app-choice',
@@ -13,8 +14,11 @@ import { FundsService } from '../../services/funds/funds.service';
 })
 export class ChoiceComponent {
 
-    private _snackBar = inject(MatSnackBar);
     private fundService = inject(FundsService);
+    private utils = inject(UtilsService);
+    private _snackBar = inject(MatSnackBar);
+
+    private cashSoundEffectPath = "cash-register-sound.mp3"
 
     isEnabled:boolean = false;
     isStarted:boolean = false;
@@ -29,7 +33,7 @@ export class ChoiceComponent {
 
         var amountDeducted = 10.00;
 
-        this.playCashSound();
+        this.utils.playSoundEffect(this.cashSoundEffectPath);
         this._snackBar.open(
             `Thank you for playing! $ ${amountDeducted} is deducted from your account balance!`,
             'Dissmiss',
@@ -42,13 +46,6 @@ export class ChoiceComponent {
 
     update(newValue: boolean) {
         this.isEnabled = newValue;
-    }
-
-    private playCashSound() {
-        var audio = new Audio()
-        audio.src = "../../../assets/cash-register-sound.mp3";
-        audio.load();
-        audio.play();
     }
 
     private showInsufficianteError() {

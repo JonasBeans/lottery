@@ -1,7 +1,8 @@
 <form>
-    <mat-form-field>
+    <mat-form-field floatLabel="always">
         <mat-label>Input funds to add</mat-label>
         <input matInput id="new-balance" placeholder="50.00" #newBalanceInputFromUser>
+        <span matTextPrefix>$</span>
     </mat-form-field>
 
     <button mat-raised-button
